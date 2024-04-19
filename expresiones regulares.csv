@@ -1,0 +1,19 @@
+code;description;purchase-date;quantity;amount;email
+A-001;Product 1;20/04/2024;2;100,5;customer1@gmail.com
+A-002;Product 2;20/04/2024;1;55,65;customer2@company.com
+B-002;Product 3;22/04/2024;5;5,9;customer3@company-section.com
+B-005;Product 4;23/04/2024;3;20,94;@gmail.com
+C-003;Product 5;24/04/2024;0;2,33;customer@gmail.com
+D003;Product 6;24/04/2024;2;45;customer@gmail.com
+E-003;;24/4/2024;1;12,4;customer@gmail.com
+F-003;Product 8;;7;100;customer@gmail.com
+G-003;Product 9;24/04/2024;6;;customer@gmail.com
+;Product 10;24/04/2024;12;9,6;customer@gmail.com
+I-003;Product 11;32/04/2024;5;20;customer@gmail.com
+J-003Z;Product 12;24/04/2024;15;65;customer@gmail.com
+K-003;Product 13;30/02/2024;1;89;customer@gmail.com
+L-003;Product 14;28/02/2024;1;90;customer@gmail.com
+M-003;Product 15;31/06/2024;2;120;customer@gmail.com
+N-003;Product 16;30/06/2024;2;121;customer@gmail.com
+O-003;Product 17;23/04/2024;6;23;customer@.com
+P-003;Product 18;23/04/2024;2;56;customer@gmail.
