@@ -20,8 +20,37 @@ const regexCode = /^[A-Z]-\d{3}$/;
 */
 
 
-const regexPurchaseDate  = /^(?:(?:31\/(?:0?[13578]|1[02]))|(?:30\/(?:0?[13-9]|1[0-2]))|(?:0?[1-9]|1\d|2\d)\/(?:0?[1-9]|1[0-2]))\/\d{4}$/;
+const regexPurchaseDate  = /^(?:19|20)(?:(?:(?:[02468][048])|(?:[13579][26]))-02-29|(?:\d{2})-(?:(?:02-(?:0[1-9]|1\d|2[0-8]))|(?:((?:0[13-9]|1[012])-(?:0[1-9]|1\d|2\d|30)))|(?:((?:0[13578]|1[02])-31))))$/
 
+
+/*
+    ^: Indicates the start of the string, ensuring the match starts from the beginning.
+    (?:19|20): This non-capturing group verifies that the first two digits of the year are either "19" or "20", setting the range of valid years.
+    (: Initiates a broader non-capturing group.
+        (?: Non-capturing group for the leap year validation and February 29.
+            (?: Another non-capturing group for the leap year validation.
+                (?:[02468][048]|[13579][26]): Matches leap years divisible by 4 but not by 100 unless also divisible by 400, such as 2000, 2004, 2008, etc.
+                -02-29: Verifies February 29 for leap years.
+        |: Indicates an alternative.
+            \d{2}: Matches the last two digits representing the year, allowing for a specific year between 00 and 99.
+            -: Separates the year from the month in the date.
+            (?: Non-capturing group for non-leap years in February.
+                (?:02-(?:0[1-9]|1\d|2[0-8])): Matches February (02) days from 01 to 28 in non-leap years.
+            |: Indicates an alternative.
+            (?: Non-capturing group for months with 30 days.
+                (?: Non-capturing group for months with 30 days.
+                    (?:0[13-9]|1[012]): Matches months with 30 days ().
+                    (?:-(?:0[1-9]|1\d|2\d|30)): Matches days from 01 to 30 in months with 30 days.
+            |: Indicates an alternative.
+            (?: Non-capturing group for months with 31 days.
+                (?: Non-capturing group for months with 31 days.
+                    (?:0[13578]|1[02]): Matches months with 31 days: January, March, May, July, August, October, and December.
+                    (?:-31): Matches the 31st day in months with 31 days.
+     $: Matches the end of the string.
+
+*/
+
+//const regexPurchaseDate  = /^(?:(?:31\/(?:0?[13578]|1[02]))|(?:30\/(?:0?[13-9]|1[0-2]))|(?:0?[1-9]|1\d|2\d)\/(?:0?[1-9]|1[0-2]))\/\d{4}$/;
 
 /*
     This regular expression validates the format of the "purchase date" field. 
@@ -29,7 +58,7 @@ const regexPurchaseDate  = /^(?:(?:31\/(?:0?[13578]|1[02]))|(?:30\/(?:0?[13-9]|1
         where "D" and "DD" represent one or two digits for the day, 
         "M" and "MM" represents one or two digits for the month, 
         and "YYYY" represents four digits for the year.
-
+^
     /^ : parse the string from the beginning
 
     (?:31\/(?:0?[13578]|1[02])): This part matches the months that have 31 days 
@@ -73,7 +102,7 @@ const regexPurchaseDate  = /^(?:(?:31\/(?:0?[13578]|1[02]))|(?:30\/(?:0?[13-9]|1
 
 */
 
-const regexAmount = /^(?:\d{1,4}(?:,\d{1,2})?)$/;
+const regexAmount = /(?:\d{1,4}(?:,\d{1,2})?)$/;
 ;
 
 /*
