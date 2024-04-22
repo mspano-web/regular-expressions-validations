@@ -3,7 +3,7 @@
 La presente iniciativa contiene el codigo de un ejemplo para facilitar la comprension del uso de validaciones en datos de entrada
 mediante el uso de expresiones regulares.
 Es totalmente gratuito y compartido como un aporte a la comunidad. 
-Se apoya en videos que seran publicados en el canal de youtube:  [en Construccion).
+Se apoya en videos que seran publicados en el canal de youtube:  [https://www.youtube.com/watch?v=gcUP6abUbAw).
 
 ___
 
